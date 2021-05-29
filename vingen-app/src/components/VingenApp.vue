@@ -1,7 +1,7 @@
 <template>
   <div class="properties">
 
-    <div class="property-card" v-for="propiedad in this.propiedades" :key="propiedad.id">
+    <div class="property-card" v-for="propiedad in this.propiedades.datos" :key="propiedad.id">
       
       <div class="property__image">
         <img src="https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Apartamento">
@@ -11,12 +11,12 @@
       <div class="property__text">
         <h4 class="property__description">{{ propiedad.descripcion }}</h4>
         <div class="row">
-          <p class="property__ciudad">Ciudad: {{ propiedad.codigoCiudad }}</p>
+          <p class="property__ciudad">Ciudad: {{ propiedad.ciudad.nombre }}</p>
           <p class="property__dir">Dirección: {{ propiedad.direccion }}</p>
         </div>
-        <p class="property__type">Tipo de propiedad: {{ propiedad.codigoTipoPropiedad }}</p>
+        <p class="property__type">Tipo de propiedad: {{ propiedad.tipoPropiedad.descripcion }}</p>
         <div class="row">
-          <p class="property__area">Área: {{ propiedad.area }}</p>
+          <p class="property__area">Área: {{ propiedad.area }} metros</p>
           <p class="property__stratum">Estrato: {{ propiedad.estrato }}</p>
         </div>
         <h4 class="property__price">Precio: ${{ propiedad.precio }}</h4>
@@ -51,6 +51,8 @@ export default {
 
 <style scoped>
 .properties {
+  padding: 3rem;
+  background-color: #f0f0f0;
   display: grid;
   grid-template: auto / repeat(3, 1fr);
   gap: 24px;
@@ -69,6 +71,7 @@ export default {
 }
 
 .property-card {
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   align-items: center;
