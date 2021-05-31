@@ -2,10 +2,7 @@
   <div id="app">
     <header>
       <div class="logo-container">
-        <img src="../src/assets/svg/logo-vingen-blue.svg" alt="Logo Vingen">
-      </div>
-      <div class="search-container">
-        <input type="text" placeholder="Buscar..." />
+        <img src="../src/assets/svg/logo-vingen-yellow.svg" alt="Logo Vingen">
       </div>
       <nav class="options">
         <a href="#">Acerca de nosotros</a>
@@ -19,13 +16,13 @@
         <h3>Síguenos en nuestras redes</h3>
         <ul>
           <a href="#" class="social-media"
-            ><i class="fab fa-facebook-square fa-3x"></i
+            ><i class="fab fa-facebook fa-3x"></i
           ></a>
           <a href="#" class="social-media"
-            ><i class="fab fa-instagram-square fa-3x"></i
+            ><i class="fab fa-instagram fa-3x"></i
           ></a>
           <a href="#" class="social-media"
-            ><i class="fab fa-whatsapp-square fa-3x"></i
+            ><i class="fab fa-whatsapp fa-3x"></i
           ></a>
         </ul>
       </div>

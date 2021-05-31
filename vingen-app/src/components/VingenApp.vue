@@ -11,7 +11,6 @@
           alt="Apartamento"
         />
       </div>
-
       <div class="property__text">
         <h4 class="property__description">{{ propiedad.descripcion }}</h4>
         <div class="row">
