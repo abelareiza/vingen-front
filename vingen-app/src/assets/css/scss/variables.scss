@@ -1,7 +1,70 @@
+// Colors
 $white: #ffffff;
-$black: #000814;
-$dark-blue: #021d3d;
-$blue: #053567;
-$primary-yellow: #fdc300;
-$secondary-yellow: #fdd60c;
-$light-grey: #e6e6e6;
+$blue-charcoal: #000814;
+$tangaroa: #021d3d;
+$catalina-blue: #053567;
+$amber: #fdc300;
+$candlelight: #fdd60c;
+$mercury: #e6e6e6;
+
+// Font-styles
+@mixin caption-text {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 400;
+}
+
+@mixin body-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+
+@mixin button-text {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: 500;
+}
+
+@mixin subheading-text {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@mixin heading-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+@mixin pageheading-text {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+@mixin display-s-text {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+@mixin display-m-text {
+  font-size: 1.625rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+@mixin display-l-text {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+@mixin display-xl-text {
+  font-size: 2.625rem;
+  line-height: 2.75rem;
+  font-weight: 500;
+}

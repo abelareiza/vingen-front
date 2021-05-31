@@ -2,14 +2,14 @@
 
 .properties {
   padding: 3rem;
-  background-color: #ffffff;
+  background-color: $white;
   display: grid;
   grid-template: auto / repeat(3, 1fr);
   gap: 24px;
 }
 
 .property-card {
-  background-color: #e6e6e6;
+  background-color: $mercury;
   color: $black;
   display: grid;
   grid-template: auto / 1fr 1fr;

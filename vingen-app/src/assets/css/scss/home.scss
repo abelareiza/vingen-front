@@ -12,8 +12,6 @@
   font-family: "Rubik", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 
 header {
@@ -21,7 +19,7 @@ header {
   align-items: center;
   justify-content: space-between;
   height: auto;
-  background-color: $dark-blue;
+  background-color: $tangaroa;
 }
 
 .logo-container {
@@ -42,12 +40,12 @@ footer {
   height: 200px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: $dark-blue;
+  background: $tangaroa;
 }
 
 .social-media {
   margin-right: 1rem;
-  color: #ffffff;
+  color: $white;
 }
 
 .social-media__container {
