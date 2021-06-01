@@ -1,55 +1,54 @@
 <template>
   <div id="app">
-    <header>
-      <div class="logo-container">
-        <img src="../src/assets/svg/logo-vingen-yellow.svg" alt="Logo Vingen">
+    <header class="header">
+      <div>
+        <img class="header__logo" src="../src/assets/svg/logo-vingen-amber.svg" alt="Logo Vingen">
       </div>
-      <nav class="options">
-        <a href="#">Acerca de nosotros</a>
-        <a href="#">Contáctanos</a>
-        <a href="#">Agregar Propiedad <i class="far fa-plus-square"></i></a>
+      <nav class="header__nav">
+        <a href="#" class="nav__option">Acerca de nosotros</a>
+        <a href="#" class="nav__option">Contáctanos</a>
+        <a href="#" class="nav__option">Agregar Propiedad</a>
       </nav>
     </header>
     <VingenApp />
-    <footer>
-      <div class="social-media__container">
-        <h3>Síguenos en nuestras redes</h3>
-        <ul>
-          <a href="#" class="social-media"
+    <footer class="footer">
+      <div class="footer__social-media">
+        <h3 class="social-media__title">Síguenos en nuestras redes</h3>
+        <div>
+          <a href="#" class="social-media__item"
             ><i class="fab fa-facebook fa-3x"></i
           ></a>
-          <a href="#" class="social-media"
+          <a href="#" class="social-media__item"
             ><i class="fab fa-instagram fa-3x"></i
           ></a>
-          <a href="#" class="social-media"
+          <a href="#" class="social-media__item"
             ><i class="fab fa-whatsapp fa-3x"></i
           ></a>
-        </ul>
+        </div>
       </div>
-      <div class="legal-advice">
-        <ul>
-          <li><a href="#">Términos y condiciones</a></li>
-          <li><a href="#">Aviso de privacidad</a></li>
-        </ul>
+      <div class="footer__legal-advice">
+        <a href="#" class="legal-advice__item">Aviso de privacidad</a>
+        <a href="#" class="legal-advice__item">Términos y condiciones</a>
       </div>
-      <div class="about">
-        <h3>Powered by:</h3>
-        <h2>Vingen</h2>
-        <!-- <img src="" alt="Vingen Logo"> -->
+      <div class="footer__about">
+        <h3 class="about__title">Powered by:</h3>
+        <div>
+          <img class="about__logo" src="../src/assets/svg/logo-vingen-white.svg" alt="Logo Vingen">
+        </div>
       </div>
     </footer>
   </div>
 </template>
 
 <script>
-import VingenApp from "./components/VingenApp.vue";
+  import VingenApp from "./components/VingenApp.vue";
 
-export default {
-  name: "App",
-  components: {
-    VingenApp,
-  },
-};
+  export default {
+    name: "App",
+    components: {
+      VingenApp,
+    },
+  };
 </script>
 
 <style lang="scss">

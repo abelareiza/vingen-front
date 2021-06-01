@@ -1,6 +1,6 @@
 @import "variables";
 
-.properties {
+.main {
   padding: 3rem;
   background-color: $white;
   display: grid;
@@ -8,9 +8,9 @@
   gap: 24px;
 }
 
-.property-card {
+.property {
   background-color: $mercury;
-  color: $black;
+  color: $blue-charcoal;
   display: grid;
   grid-template: auto / 1fr 1fr;
   border: none;

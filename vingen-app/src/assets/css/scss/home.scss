@@ -14,70 +14,86 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
-  display: flex;
+.header {
   align-items: center;
-  justify-content: space-between;
-  height: auto;
   background-color: $tangaroa;
+  display: flex;
+  height: 160px;
+  justify-content: space-between;
+  padding: 0 20px;
+
+  &__logo {
+    height: 40px;
+    margin: 0.5rem;
+  }
+
+  &__nav {
+    display: flex;
+  }
+
+  .nav__option {
+    @include heading-text;
+    color: $amber;
+    margin: 0.5rem;
+    text-decoration: none;
+  }
 }
 
-.logo-container {
-  margin: 2rem;
-}
-
-.logo-container img {
-  height: 40px;
-}
-
-.options a {
-  text-decoration: none;
-  color: $primary-yellow;
-  margin-right: 1rem;
-}
-
-footer {
-  height: 200px;
+.footer {
+  background: $tangaroa;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: $tangaroa;
-}
+  height: 160px;
 
-.social-media {
-  margin-right: 1rem;
-  color: $white;
-}
+  &__social-media {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 2;
+    justify-content: center;
+  }
 
-.social-media__container {
-  grid-column: 1 / 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  .social-media__title {
+    @include heading-text;
+    color: $white;
+    margin-bottom: 0.5rem;
+  }
 
-.legal-advice {
-  grid-column: 2 / 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
+  .social-media__item {
+    color: $white;
+    margin: 0.5rem;
+  }
 
-.legal-advice ul {
-  list-style: none;
-}
+  &__legal-advice {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / 3;
+    justify-content: center;
+  }
 
-.legal-advice a {
-  text-decoration: none;
-  color: $white;
-}
+  .legal-advice__item {
+    @include heading-text;
+    color: $white;
+    margin: 0.5rem;
+    text-decoration: none;
+  }
 
-.about {
-  grid-column: 3 / 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: $white;
+  &__about {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    grid-column: 3 / 4;
+    justify-content: center;
+  }
+
+  .about__title {
+    @include heading-text;
+    color: $white;
+    margin-bottom: 0.5rem;
+  }
+
+  .about__logo {
+    height: 40px;
+  }
 }
