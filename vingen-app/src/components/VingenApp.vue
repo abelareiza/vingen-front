@@ -1,23 +1,23 @@
 <template>
   <div class="main">
     <div class="property" v-for="propiedad in this.propiedades.datos" :key="propiedad.id">
-      <div>
-        <img class="property__image" src="https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Apartamento"/>
-      </div>
       <div class="property__text">
         <p class="property__description">{{ propiedad.descripcion }}</p>
         <div>
-          <p class="property__ciudad">Ciudad: {{ propiedad.ciudad.nombre }}</p>
-          <p class="property__dir">Dirección: {{ propiedad.direccion }}</p>
+          <p class="property__ciudad"><strong>Ciudad:</strong> {{ propiedad.ciudad.nombre }}</p>
+          <p class="property__dir"><strong>Dirección:</strong> {{ propiedad.direccion }}</p>
         </div>
         <p class="property__type">
-          Tipo de propiedad: {{ propiedad.tipoPropiedad.descripcion }}
+          <strong>Tipo de propiedad:</strong> {{ propiedad.tipoPropiedad.descripcion }}
         </p>
         <div>
-          <p class="property__area">Área: {{ propiedad.area }} metros</p>
-          <p class="property__stratum">Estrato: {{ propiedad.estrato }}</p>
+          <p class="property__area"><strong>Área:</strong> {{ propiedad.area }} metros cuadrados</p>
+          <p class="property__stratum"><strong>Estrato:</strong> {{ propiedad.estrato }}</p>
         </div>
-        <p class="property__price">Precio: ${{ propiedad.precio }}</p>
+        <p class="property__price">$ {{ propiedad.precio }}</p>
+      </div>
+      <div class="property__image-container">
+        <img class="property__image" src="https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Apartamento"/>
       </div>
     </div>
   </div>
@@ -25,6 +25,7 @@
 
 <script>
 import PropiedadService from "../service/PropiedadService";
+
 export default {
   name: "VingenApp",
   data() {

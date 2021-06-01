@@ -1,37 +1,136 @@
 @import "variables";
 
 .main {
-  padding: 3rem;
-  background-color: $white;
+  background-color: $mercury;
   display: grid;
-  grid-template: auto / repeat(3, 1fr);
-  gap: 24px;
+  row-gap: 2.625rem;
+  grid-template: auto / repeat(2, 1fr);
+  justify-items: center;
+  padding: 3.375rem 0;
 }
 
 .property {
-  background-color: $mercury;
-  color: $blue-charcoal;
-  display: grid;
-  grid-template: auto / 1fr 1fr;
-  border: none;
+  align-items: center;
+  background-color: $white;
+  border-left: 4px solid $amber;
   border-radius: 0;
-  box-shadow: 3px 3px 8px 0px rgba(50, 50, 50, 0.5);
-}
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 40vw;
 
-.property__text {
-  text-align: start;
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
 
-  h4,
-  p {
-    text-transform: capitalize;
-    line-height: 1.2;
+  &__text {
+    padding: 2rem;
+    width: 40%;
+  }
+
+  &__description {
+    @include pageheading-text;
+    color: $tangaroa;
+    margin-bottom: 0.75rem;
+  }
+
+  &__ciudad {
+    @include body-text;
+    color: $blue-charcoal;
+  }
+
+  &__dir {
+    @include body-text;
+    color: $blue-charcoal;
+  }
+
+  &__type {
+    @include body-text;
+    color: $blue-charcoal;
+  }
+
+  &__area {
+    @include body-text;
+    color: $blue-charcoal;
+  }
+
+  &__stratum {
+    @include body-text;
+    color: $blue-charcoal;
+  }
+
+  &__price {
+    @include pageheading-text;
+    border-bottom: 4px solid $amber;
+    color: $blue-charcoal;
+    margin-top: 0.75rem;
+    width: fit-content;
+  }
+
+  &__image-container {
+    height: 100%;
+    width: 50%;
+
+    .property__image {
+      object-fit: cover;
+      object-position: bottom;
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 
-.property__image img {
-  width: 100%;
+@media (max-width: 1200px) {
+  .main {
+    grid-template: auto / 1fr;
+  }
+
+  .property {
+    width: 60%;
+  }
 }
 
-.property__text {
-  padding: 20px;
+@media (max-width: 992px) {
+  .property {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .property {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .property {
+    align-items: center;
+    // border-left: 0;
+    // border-top: 4px solid $amber;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+
+    &__text {
+      padding: 2rem 2rem 0;
+      width: 80%;
+    }
+
+    &__description {
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+
+    &__price {
+      text-align: center;
+      margin: 1.25rem auto;
+    }
+
+    &__image-container {
+      height: 50%;
+      width: 100%;
+    }
+  }
 }
