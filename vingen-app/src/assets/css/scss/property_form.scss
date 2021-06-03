@@ -1,0 +1,112 @@
+@import "variables";
+
+.form {
+  background-color: $catalina-blue;
+  display: grid;
+  place-items: center;
+
+  &__container {
+    background-color: $white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    height: auto;
+    margin: 120px auto;
+    max-width: 712px;
+    padding: 48px;
+    width: 60%;
+  }
+
+  &__title {
+    @include display-xl-text;
+    color: $blue-charcoal;
+    margin: 1.25rem auto;
+  }
+
+  &__field {
+    @include heading-text;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 0.75rem 0 1.5rem;
+    width: 100%;
+  }
+
+  &__label {
+    @include subheading-text;
+    color: $catalina-blue;
+    width: 100%;
+  }
+
+  &__input,
+  &__select {
+    @include heading-text;
+    border: none;
+    border-bottom: 1px solid $tangaroa;
+    width: 100%;
+    height: 2rem;
+    outline: none;
+  }
+
+  &__submit-button {
+    @include pageheading-text;
+    align-items: center;
+    background-color: $amber;
+    border: none;
+    border-radius: 0;
+    color: $blue-charcoal;
+    cursor: pointer;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    margin: 48px auto 0;
+    padding: 0.75rem 1.5rem;
+    width: 80%;
+
+    &:hover {
+      opacity: 0.75;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+  }
+
+  textarea {
+    @include heading-text;
+    font-family: "Rubik", sans-serif;
+    height: 4rem;
+    width: 100%;
+    resize: none;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 1200px) {
+  .form__container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  .form__container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .form__container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .form__container {
+    width: 90%;
+  }
+}

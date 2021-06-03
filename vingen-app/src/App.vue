@@ -2,7 +2,11 @@
   <div id="app">
     <header class="header">
       <div>
-        <img class="header__logo" src="../src/assets/svg/logo-vingen-amber.svg" alt="Logo Vingen">
+        <img
+          class="header__logo"
+          src="../src/assets/svg/logo-vingen-amber.svg"
+          alt="Logo Vingen"
+        />
       </div>
       <nav class="header__nav">
         <a href="#" class="nav__option">Acerca de nosotros</a>
@@ -11,6 +15,7 @@
       </nav>
     </header>
     <VingenApp />
+    <PropertyForm />
     <footer class="footer">
       <div class="footer__social-media">
         <h3 class="social-media__title">Síguenos en nuestras redes</h3>
@@ -33,7 +38,11 @@
       <div class="footer__about">
         <h3 class="about__title">Powered by:</h3>
         <div>
-          <img class="about__logo" src="../src/assets/svg/logo-vingen-white.svg" alt="Logo Vingen">
+          <img
+            class="about__logo"
+            src="../src/assets/svg/logo-vingen-white.svg"
+            alt="Logo Vingen"
+          />
         </div>
       </div>
     </footer>
@@ -41,16 +50,18 @@
 </template>
 
 <script>
-  import VingenApp from "./components/VingenApp.vue";
+import VingenApp from "./components/VingenApp.vue";
+import PropertyForm from "./components/PropertyForm.vue";
 
-  export default {
-    name: "App",
-    components: {
-      VingenApp,
-    },
-  };
+export default {
+  name: "App",
+  components: {
+    VingenApp,
+    PropertyForm,
+  },
+};
 </script>
 
 <style lang="scss">
-   @import "./assets/css/scss/home.scss";
+@import "./assets/css/scss/home.scss";
 </style>
