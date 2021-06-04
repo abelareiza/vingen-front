@@ -68,6 +68,10 @@
     }
   }
 
+  .caption {
+    @include caption-text;
+  }
+
   textarea {
     @include heading-text;
     font-family: "Rubik", sans-serif;

@@ -6,12 +6,12 @@
       </div>
 
       <div class="form__field">
-        <label class="form__label">Código de la agencia</label>
+        <label class="form__label">Código de la agencia *</label>
         <input class="form__input" type="number" v-model="codigoAgencia" required>
       </div>
 
       <div class="form__field">
-        <label class="form__label">Tipo de propiedad</label>
+        <label class="form__label">Tipo de propiedad *</label>
         <select class="form__select" v-model="codigoTipoPropiedad" required>
           <option value="1">Apartamento</option>
           <option value="2">Casa</option>
@@ -22,7 +22,7 @@
       </div>
 
       <div class="form__field">
-        <label class="form__label">Estrato</label>
+        <label class="form__label">Estrato *</label>
         <select class="form__select" v-model="estrato" required>
           <option value="6">6</option>
           <option value="5">5</option>
@@ -34,20 +34,20 @@
       </div>
 
       <div class="form__field">
-        <label class="form__label">Descripción</label>
+        <label class="form__label">Descripción *</label>
         <textarea class="form__input" v-model="descripcion" required></textarea>
       </div>
 
       <div class="form__location">
         <div class="form__field">
-          <label class="form__label">Departamento</label>
+          <label class="form__label">Departamento *</label>
           <select class="form__select" v-model="departamento" required>
             <option v-for="departamento in this.departamentos.datos" :key="departamento.id" :value="departamento.codigo">{{ departamento.nombre }}</option>
           </select>
         </div>
 
         <div class="form__field">
-          <label class="form__label">Ciudad</label>
+          <label class="form__label">Ciudad *</label>
           <select class="form__select" v-model="ciudad" required>
             <option v-for="ciudad in this.ciudades.datos" :key="ciudad.id" :value="ciudad.codigo">{{ ciudad.nombre }}</option>
           </select>
@@ -55,24 +55,26 @@
       </div>
 
       <div class="form__field">
-        <label class="form__label">Dirección</label>
+        <label class="form__label">Dirección *</label>
         <input class="form__input" type="text" v-model="direccion" required>
       </div>
 
       <div class="form__field">
-        <label class="form__label">Precio</label>
+        <label class="form__label">Precio *</label>
         <input class="form__input" type="number" v-model="precio" required>
       </div>
 
       <div class="form__field">
-        <label class="form__label">Área</label>
+        <label class="form__label">Área (en metros cuadrados)*</label>
         <input class="form__input" type="number" v-model="area" required>
       </div>
 
-      <!-- <div class="form__field">
-        <label class="form__label">Imágenes</label>
-        <input type="file" @change="onFileUpload">
-      </div> -->
+      <div class="form__field">
+        <label class="form__label">Imagen (link) *</label>
+        <input class="form__input" type="text" v-model="urlImagen" required>
+      </div>
+
+      <p class="caption">Los campos marcados con un asterisco (*) son obligatorios.</p>
 
       <div class="submit">
         <button class="form__submit-button">Crear propiedad</button>
@@ -85,7 +87,6 @@
 import DepartamentoService from "../service/DepartamentoService";
 import CiudadService from "../service/CiudadService";
 import FormularioService from "../service/FormularioService";
-// import ImageService from "../service/ImageService";
 
 export default {
   name: "PropertyForm",
@@ -96,15 +97,14 @@ export default {
       descripcion: '',
       estrato: '',
       ciudad: '',
-      departamento: '91',
+      departamento: '05',
       direccion: '',
       precio: '',
       area: '',
+      urlImagen: '',
 
       departamentos: null,
-      ciudades: null,
-      urlImagen: null,
-      // selectedImage: null
+      ciudades: null
     };
   },
   methods: {
@@ -127,16 +127,12 @@ export default {
         "area": this.area,
         "imagenesPropiedad": [
           {
-            "urlImagen": 'url prueba 23 front'
+            "urlImagen": this.urlImagen
           }
         ]
       };
       this.formularioService.postForm(propertyResponse);
-    },
-    // onFileUpload (event) {
-    //   this.selectedImage = event.target.files[0];
-    //   this.imageService.postImage(this.selectedImage);
-    // }
+    }
   },
   departamentoService: null,
   ciudadService: null,
@@ -144,7 +140,6 @@ export default {
     this.departamentoService = new DepartamentoService();
     this.ciudadService = new CiudadService();
     this.formularioService = new FormularioService();
-    // this.imageService = new ImageService();
   },
   beforeUpdate() {
     this.ciudadService.getAllByDepartment(this.departamento).then((data) => {
