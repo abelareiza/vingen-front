@@ -69,8 +69,13 @@
         <input class="form__input" type="number" v-model="area" required>
       </div>
 
+      <!-- <div class="form__field">
+        <label class="form__label">Imágenes</label>
+        <input type="file" @change="onFileUpload">
+      </div> -->
+
       <div class="submit">
-        <div class="form__submit-button">Crear propiedad</div>
+        <button class="form__submit-button">Crear propiedad</button>
       </div>
     </form>
   </div>
@@ -79,6 +84,8 @@
 <script>
 import DepartamentoService from "../service/DepartamentoService";
 import CiudadService from "../service/CiudadService";
+import FormularioService from "../service/FormularioService";
+// import ImageService from "../service/ImageService";
 
 export default {
   name: "PropertyForm",
@@ -96,18 +103,48 @@ export default {
 
       departamentos: null,
       ciudades: null,
+      urlImagen: null,
+      // selectedImage: null
     };
   },
   methods: {
     handleSubmit() {
-      console.log('form submited')
-    }
+      let propertyResponse = {
+        "tipoPropiedad": { 
+          "codigoTipoPropiedad": this.codigoTipoPropiedad
+        },
+        "codigoAgencia": this.codigoAgencia,
+        "descripcion": this.descripcion,
+        "estrato": this.estrato,
+        "ciudad": {
+            "codigo": this.ciudad,
+            "departamento": {
+                "codigo": this.departamento
+            }
+        },
+        "direccion": this.direccion,
+        "precio": this.precio,
+        "area": this.area,
+        "imagenesPropiedad": [
+          {
+            "urlImagen": 'url prueba 23 front'
+          }
+        ]
+      };
+      this.formularioService.postForm(propertyResponse);
+    },
+    // onFileUpload (event) {
+    //   this.selectedImage = event.target.files[0];
+    //   this.imageService.postImage(this.selectedImage);
+    // }
   },
   departamentoService: null,
   ciudadService: null,
   created() {
     this.departamentoService = new DepartamentoService();
     this.ciudadService = new CiudadService();
+    this.formularioService = new FormularioService();
+    // this.imageService = new ImageService();
   },
   beforeUpdate() {
     this.ciudadService.getAllByDepartment(this.departamento).then((data) => {

@@ -17,6 +17,7 @@
         <p class="property__price">$ {{ propiedad.precio }}</p>
       </div>
       <div class="property__image-container">
+        <!-- <img class="property__image" :src="propiedad.imagenesPropiedad[0].urlImagen" alt="Apartamento"/> -->
         <img class="property__image" src="https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Apartamento"/>
       </div>
     </div>
